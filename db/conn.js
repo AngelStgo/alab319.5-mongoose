@@ -16,4 +16,4 @@ try {
 
 let db = conn.db("sample_training");
 
-export default db;
+export default db; 

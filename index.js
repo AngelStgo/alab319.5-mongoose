@@ -1,9 +1,17 @@
 import express, { Router } from "express";
 import dotenv from "dotenv";
 import router from "./routes/grades.js";
+import mongoose from "mongoose";
 dotenv.config();
 
 // console.log(process.env.ATLAS_URI)
+
+// Wait to connect to the DB
+await mongoose
+  .connect(process.env.ATLAS_URI)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch(e => console.error(e))
+
 
 
 const PORT = process.env.PORT || 5050;
@@ -24,5 +32,5 @@ app.use((err, _req, res, next) => {
 
 // Start the Express server
 app.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
+  console.log(`Server is running on port: ${PORT}`); 
 });

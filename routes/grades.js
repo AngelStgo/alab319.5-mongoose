@@ -1,8 +1,16 @@
 import express from "express";
 import db from "../db/conn.js";
 import { ObjectId } from "mongodb";
+// import mongoose from "mongoose";
+
 
 const router = express.Router();
+
+// // Wait to connect to the DB
+// await mongoose
+//   .connect(process.env.ATLAS_URI)
+//   .then(() => console.log("Connected to MongoDB"))
+//   .catch(e => console.error(e))
 
 // GET /grades/:id
 // Get a single grade entry
