@@ -9,9 +9,9 @@ import mongoose from "mongoose";
 // });
 
 
-const gradesSchemma = new mongoose.Schema({
+export const gradesSchemma = new mongoose.Schema({
     // scores have an array of class name plus numbered score per each class.
-    score: [
+    score: [ //* create a const of "scores" as a schema and call it in here instead!
         {
             type:{
                 type: String
